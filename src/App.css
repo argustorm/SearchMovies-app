@@ -19,3 +19,31 @@
 .card-movie {
   margin: 10px;
 }
+
+.badge-trophy {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-card {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.detail-background {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  background-color: #D0D0D0 ;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 28px;
+}
+
+

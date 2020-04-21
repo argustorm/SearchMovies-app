@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Card } from 'antd';
+import { Link } from 'react-router-dom';
 
 const { Meta } = Card;
 
@@ -10,8 +11,8 @@ export class ContentComponent extends Component {
         results: []
     }
 
-    _fetchMovie(id) {
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${id}`)
+    _fetchMovie(movie) {
+        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}`)
                 .then(res => res.json())
                 .then(data => {
                     const {Search = []} = data
@@ -37,8 +38,7 @@ export class ContentComponent extends Component {
         } else {
         return results.map(movie => {
                 return (
-                    <div key={movie.imdbID} className='card-movie'>
-                        
+                    <Link to={`detail/${movie.imdbID}`} key={movie.imdbID} className='card-movie'>
                             <Card
                                 hoverable
                                 style={{ width: 240 }}
@@ -47,7 +47,7 @@ export class ContentComponent extends Component {
                                 <Meta title={movie.Title} description={movie.Year} />
                             </Card>
                         
-                    </div>
+                    </Link>
             )
         })
     }

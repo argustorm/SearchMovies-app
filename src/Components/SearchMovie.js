@@ -7,11 +7,14 @@ export class SearchButton extends Component {
     render() {
         return (
             <div>
-                <Search placeholder="Search"
-                        onSearch={value => this.props.movie(value)} 
-                        enterButton
-                        />
+                <div>
+                    <Search placeholder="Search Movie"
+                            onSearch={value => this.props.movie(value)} 
+                            enterButton
+                            />
+                </div>
             </div>
+            
         )
     }
 }

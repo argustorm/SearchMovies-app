@@ -21,15 +21,20 @@ export class FormPage extends Component {
     render() {
         return (
             <div>
-                <div  className="SearchButton">
-                    <SearchButton movie={this._handleMovie}/>
+                <div >
+                    <div className='header'>
+                        <div  className="SearchButton">
+                            <SearchButton movie={this._handleMovie}/>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        {this.state.showContent
+                            ? <ContentComponent movie={this.state.movie}/>
+                            : null}
+                    </div>
                 </div>
-                <div>
-                    {this.state.showContent
-                        ? <ContentComponent movie={this.state.movie}/>
-                        : null}
-                </div>
-            </div>
+            </div>           
         )
     }
 }
